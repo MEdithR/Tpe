@@ -48,4 +48,18 @@ class Viaje{
         $this->pasViaje=$pasajerosVi;
     }
 
+    public function arrayPasajeros($nombe,$apellido,$numDoc){
+        $lisPas=$this->getPasViaje();
+       
+        if(count($lisPas)< $this->cantMaxPasaj){
+                $lisPas= ["nombre"=>$nombre, "apellido"=>$apellido, "numero_documento"=>$numDoc]; 
+                array_push($arrayPasajeros,$listaPasajeros);                            
+                $this->setPasVije($lisPasa);                                                 
+            }   
+        }
+
+    }
+
+
+
 }
