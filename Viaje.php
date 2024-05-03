@@ -6,13 +6,15 @@ class Viaje{
     private $destino;
     private $cantMaxPasaj;
     private $pasViaje;
+    private $objResponsable;
 
-    Public function __construct($codVia,$dest,$cantMax,$pasajerosVi){
+    Public function __construct($codVia,$dest,$cantMax,$objRes){
 
         $this->codViaje=$codVia;
         $this->destino=$dest;
         $this->cantMaxPasaj=$cantMax;
-        $this->pasViaje=$pasajerosVi;
+        $this->pasViaje=[];
+        $this->objResponsable;
 
     }
 
@@ -32,6 +34,10 @@ class Viaje{
          return $this->pasViaje;
     }
 
+    public function getObjResponsable(){
+        return $this->objResponsable;
+    }
+
     public function setCodViaje($codVia){
         $this->codViaje=$codVia;
     }
@@ -47,11 +53,15 @@ class Viaje{
     public function setPasViaje($pasajerosVi){
         $this->pasViaje=$pasajerosVi;
     }
+    
+    public function setObjResponsable($objRes){
+        $this->objResponsable=$objRes;
+    }
 
     public function arrayPasajeros($nombe,$apellido,$numDoc){
         $lisPas=$this->getPasViaje();
        
-        if(count($lisPas)< $this->cantMaxPasaj){
+        if(count($lisPas)< $this->getCantMaxPasaj()){
                 $lisPas= ["nombre"=>$nombre, "apellido"=>$apellido, "numero_documento"=>$numDoc]; 
                 array_push($arrayPasajeros,$listaPasajeros);                            
                 $this->setPasVije($lisPasa);                                                 
